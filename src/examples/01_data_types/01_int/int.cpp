@@ -1,3 +1,4 @@
+
 #include "int.h"
 using std::cout;
 /*
@@ -20,4 +21,9 @@ void reassign_int_data_type()
     cout<<num<<"\n";
     num = 15.5;
     cout<<num<<"\n";
+}
+
+int echo_variable(int num)
+{
+    return num;
 }
