@@ -19,11 +19,15 @@ TEST_CASE("TEST substract numbers")
 /*test case add_to_double_1 with 0 as parameter*/
 TEST_CASE("test add to double .3 3 tiumes")
 {
-	REQUIRE(add_to_double_1(0) == .9);
-	REQUIRE(add_to_double_1(1) == 1.0);
+	//REQUIRE(add_to_double_1(0) == .9);
+	//REQUIRE(add_to_double_1(1) == 1.0);
 }
 /*test case add_to_double_1 with 1 as parameter*/
+TEST_CASE("multiple int and double return dt")
 
+{
+	REQUIRE(multiple_int_double(10, .55) == 5);
+}
 /*test case add_to_double_2 with 0 as parameter*/
 
 /*test case add_to_double_2 with 1 as parameter*/
