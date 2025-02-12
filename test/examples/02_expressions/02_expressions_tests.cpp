@@ -11,3 +11,8 @@ TEST_CASE("Verify op pre 1")
 	REQUIRE(op_pre_1(2,6,3) == 4);
 	REQUIRE(op_pre_1(2,10,2) == 7);
 }
+TEST_CASE("Verify op pre 2")
+{
+	REQUIRE(op_pre_2(2,6,2) == 4);
+	REQUIRE(op_pre_2(2,10,2) == 6);
+}

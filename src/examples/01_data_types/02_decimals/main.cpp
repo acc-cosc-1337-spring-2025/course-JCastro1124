@@ -1,5 +1,6 @@
+/*
 #include "decimals.h"
-
+#include <iostream>
 using std::cout;
 
 int main()
@@ -9,3 +10,4 @@ int main()
     cout<<"Output: "<<result<<"\n";
     return 0;
 }
+*/
