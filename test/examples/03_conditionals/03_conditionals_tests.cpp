@@ -12,3 +12,10 @@ TEST_CASE("Test and truth table")
 	REQUIRE((true && false) == false);
 	REQUIRE((false && false) == false);
 }
+TEST_CASE("Test or turh table")
+{
+	REQUIRE((true or true) == true);
+	REQUIRE((true or false) == true);
+	REQUIRE((false or true) == true);
+	REQUIRE((false or false) == false);
+}
