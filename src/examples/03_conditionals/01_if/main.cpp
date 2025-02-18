@@ -6,18 +6,20 @@ using std::cin;
 
 int main() 
 {
-	//create a bool variable named even
-	//create an int variable named value
+	int min, max, num;
 
-	//prompt user for a keyboard number
-	//assign the number to the value variable
+	cout<<"Enter min num: ";
+	cin>>min;
 
-	//call the is_even function with value as its argument
-	//and assign its return value to the even variable
-	
+	cout<<"Enter max num: ";
+	cin>>max;
 
-	//display even if number is even
+	cout<<"Enter num: ";
+	cin>>num;
 
+	auto in_range = is_num_in_range(min,max,num);
+
+	cout<<in_range<<"\n";
 
 	return 0;
 }

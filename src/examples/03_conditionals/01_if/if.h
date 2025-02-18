@@ -2,3 +2,6 @@
 // and returns a bool type
 
 
+bool is_num_in_range(int min, int max, int num);
+
+bool is_vowel(char letter);
