@@ -9,8 +9,14 @@ bool is_vowel(char letter)
 {
     return letter == 'a' or letter == 'e' or letter == 'i' || letter == 'u' || letter == 'o';
 }
-
-
+bool is_consant(char letter)
+{
+    return not letter == 'a' or not letter == 'e' or not letter == 'i' || not letter == 'u' || not letter == 'o';
+}
+bool is_num_even(int num)
+{
+    return num % 2 == 0;
+}
 //write code for function named overtime that accepts a double hours and returns true if 
 //hours over 40, false otherwise
 
