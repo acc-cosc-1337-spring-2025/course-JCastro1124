@@ -15,6 +15,17 @@ void use_while_loop(int num)
     }
 }
 
+int get_sum_of_squares(int num)
+{
+    auto sum = 0;
+    while(num > 0)
+    {
+        sum += num * num;
+        num --;
+    }
+    return sum;
+}
+
 //Using a while loop write code for display function that accepts a string and displays 
 //each character of the string in a line
 //Example: display("Hello")
