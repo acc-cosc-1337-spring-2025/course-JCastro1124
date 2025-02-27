@@ -1,7 +1,7 @@
 #include "for.h"
 using std::cout;
 using std::cin;
-
+using std::setw;
 
 void use_for_loop(int num)
 {
