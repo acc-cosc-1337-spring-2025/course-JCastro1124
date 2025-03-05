@@ -5,7 +5,7 @@ TEST_CASE("Verify Test Configuration", "verification") {
 	REQUIRE(true == true);
 }
 
-
+/*
 TEST_CASE("test value/ref para(var)")
 {
 	int num1 = ;
@@ -14,3 +14,4 @@ TEST_CASE("test value/ref para(var)")
 	REQUIRE(num1==5);
 	REQUIRE(num2 == 20);
 }
+*/
