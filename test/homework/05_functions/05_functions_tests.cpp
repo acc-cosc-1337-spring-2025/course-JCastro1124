@@ -14,5 +14,6 @@ TEST_CASE("test gc func")
 	REQUIRE(get_dna_complement("AAAACCCGGT") == "ACCGGGTTTT");
 	REQUIRE(get_dna_complement("CCCGGAAAAT") == "ATTTTCCGGG");
 
-
+	REQUIRE(reverse_string("AGCTATAG")== "GATATCGA");
+	REQUIRE(reverse_string("CGCTATAG")== "GATATCGC");
 }

@@ -17,30 +17,37 @@ double get_gc_content(string dna)
 
 string get_dna_complement(string dna)
 {
-    string reverse_dna = "";
-    for (int i = dna.size()-1; i >= 0; i--)
-    {
-        reverse_dna += dna[i];
-    }
+    string reverse_dna = reverse_string((dna));
+
     string dna_complement = "";
-    for (int i = 0; i < reverse_dna.size(); i++)
+    for (size_t i = 0; i < reverse_dna.size(); i++)
     {
-        if(reverse_dna == "A")
+        if(reverse_dna[i] == all[0])
         {
             dna_complement += "T";
         }
-        else if(reverse_dna == "T")
+        else if(reverse_dna[i] == all[2])
         {
             dna_complement += "A";
         }
-        else if(reverse_dna == "C")
+        else if(reverse_dna[i] == all[1])
         {
             dna_complement += "G";
         }
-        else if(reverse_dna == "G")
+        else if(reverse_dna[i] == all[3])
         {
             dna_complement += "C";
         }
     }
     return dna_complement;
+}
+
+string reverse_string(string dna)
+{
+    string reverse_dna = "";
+    for (int i = dna.size()-1; i >= 0; i--)
+    {
+        reverse_dna += dna[i];
+    }
+    return reverse_dna;
 }
