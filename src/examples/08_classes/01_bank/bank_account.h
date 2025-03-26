@@ -9,4 +9,5 @@ public:
     void withdraw(int amount);
 private:
     int balance {0};
+    
 };
