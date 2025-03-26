@@ -33,3 +33,11 @@ TEST_CASE("test bank acc depsoyu wit 2 diff ob")
 	REQUIRE(acc1.get_balance()==550);
 	REQUIRE(acc2.get_balance()==300);
 }
+
+TEST_CASE("test acc withdraw")
+{
+	BankAccount acc(500);
+	REQUIRE(acc.get_balance()==500);
+	acc.withdraw(50);
+	REQUIRE(acc.get_balance()==450);
+}

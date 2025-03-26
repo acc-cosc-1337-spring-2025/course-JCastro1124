@@ -8,3 +8,12 @@ void BankAccount::deposit(int amount)
         balance += amount;
     }
 }
+
+void BankAccount::withdraw(int amount)
+{
+    if(amount > 0 && balance - amount > 0)
+    {
+        balance -= amount;
+    }
+    
+}
