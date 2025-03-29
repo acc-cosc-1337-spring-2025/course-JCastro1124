@@ -1,9 +1,10 @@
 //cpp
+//public
 #include "tic_tac_toe.h"
 
 bool tic_tac_toe::game_over()
 {
-    return false; //temporary
+    return check_board_full();
 }
 
 void tic_tac_toe::start_game(string first_player)
@@ -18,8 +19,14 @@ void tic_tac_toe::mark_board(int position)
     set_next_player();
 }
 
-
-
+void tic_tac_toe::display_board() const
+{
+    for (long unsigned int i = 0; i < pegs.size(); i+=3)
+    {
+        cout<<pegs[i]<<"|"<<pegs[i+1]<<"|"<<pegs[i+2]<<"\n";
+    }
+    
+}
 
 
 //private functions
@@ -34,12 +41,24 @@ void tic_tac_toe::clear_board()
 
 void tic_tac_toe::set_next_player()
 {
-    if(player == "X")
+    if(player != "O")
     {
-        player == "O";
+        player = "O";
     }
-    if(player == "O")
+    else if(player != "X")
     {
-        player == "X";
+        player = "X";
     }
+}
+
+bool tic_tac_toe::check_board_full()
+{
+    for(long unsigned int i = 0; i <pegs.size(); i++)
+    {
+        if(pegs[i] == " ")
+        {
+            return false;
+        }
+    }
+    return true;
 }
