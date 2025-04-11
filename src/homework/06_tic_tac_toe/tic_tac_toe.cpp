@@ -133,10 +133,10 @@ bool tic_tac_toe::check_across_win()
             return true;
         }
     }
-    temp = pegs[2];
+    if(pegs[2] == "X" || pegs[2] == "O"){temp=pegs[2];}
     if (pegs[4]==temp)
     {
-        if(pegs[7]==temp)
+        if(pegs[6]==temp)
         {
             return true;
         }
