@@ -9,6 +9,7 @@ TEST_CASE("Verify Test Configuration", "verification") {
 TEST_CASE("Test board is full")
 {
 	tic_tac_toe game;
+	game.start_game("X");
 	game.mark_board(1);
 	REQUIRE(game.game_over() == false);
 	game.mark_board(2);
@@ -30,4 +31,13 @@ TEST_CASE("Test board is full")
 
 }
 
+TEST_CASE("test play get")
+{
+	tic_tac_toe game_test_1;
+	game_test_1.start_game("X");
+	REQUIRE(game_test_1.get_player()== "X");
 
+	tic_tac_toe game_test_2;
+	game_test_2.start_game("O");
+	REQUIRE(game_test_2.get_player()== "O");
+}

@@ -2,9 +2,29 @@
 //public
 #include "tic_tac_toe.h"
 
-bool tic_tac_toe::game_over()
+bool tic_tac_toe::game_over() //update
 {
-    return check_board_full();
+    if(check_column_win() == true)
+    {
+        set_winner(get_player());
+        return true;
+    }
+    else if(check_across_win() == true)
+    {
+        set_winner(get_player());
+        return true;
+    }
+    if(check_row_win() == true)
+    {
+        set_winner(get_player());
+        return true;
+    }
+    else if(check_board_full() == true)
+    {
+        set_winner("C");
+        return true;
+    }
+    return false;
 }
 
 void tic_tac_toe::start_game(string first_player)
@@ -61,4 +81,65 @@ bool tic_tac_toe::check_board_full()
         }
     }
     return true;
+}
+
+bool tic_tac_toe::check_column_win()
+{
+    string temp;
+    for(int i = 0; i <= 2; i++)
+    {
+        if(pegs[i] == "X" || pegs[i] == "O"){temp=pegs[i];}
+        if (pegs[i+3] == temp)
+        {
+            if (pegs[i+6] == temp)
+            {
+                return true;
+            }
+            
+        }
+        
+    }
+    return false;
+}
+
+bool tic_tac_toe::check_row_win()
+{
+    string temp;
+    for(long unsigned int i = 0; i <= pegs.size(); i+=3)
+    {
+        if(pegs[i] == "X" || pegs[i] == "O"){temp=pegs[i];}
+        if (pegs[i+1] == temp)
+        {
+            if (pegs[i+2] == temp)
+            {
+                return true;
+            }
+            
+        }
+        
+    }
+    return false;
+}
+
+bool tic_tac_toe::check_across_win()
+{
+    string temp;
+    if(pegs[0] == "X" || pegs[0] == "O"){temp=pegs[0];}
+
+    if(pegs[4]==temp)
+    {
+        if(pegs[8]==temp)
+        {
+            return true;
+        }
+    }
+    temp = pegs[2];
+    if (pegs[4]==temp)
+    {
+        if(pegs[7]==temp)
+        {
+            return true;
+        }
+    }
+    return false;
 }
