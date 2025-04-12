@@ -2,11 +2,15 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <iomanip>
 
 using std::vector;
 using std::cout;
 using std::string;
 
+
+#ifndef tic_tac_toe_H
+#define tic_tac_toe_H
 
 class tic_tac_toe
 {
@@ -31,5 +35,5 @@ private:
     void set_winner(string win_player) {winner = win_player;};
 };
 
-
+#endif tic_tac_toe_H
 
