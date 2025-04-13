@@ -2,7 +2,6 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include <iomanip>
 #include "tic_tac_toe.h"
 
 using std::vector;

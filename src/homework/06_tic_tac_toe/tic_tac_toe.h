@@ -2,7 +2,6 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include <iomanip>
 
 using std::vector;
 using std::cout;
