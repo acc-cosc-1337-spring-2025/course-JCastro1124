@@ -1,6 +1,7 @@
 #define CATCH_CONFIG_MAIN  // This tells Catch to provide a main() - only do this in one cpp file
 #include "catch.hpp"
 #include "tic_tac_toe.h"
+#include "tic_tac_toe_manager.h"
 
 TEST_CASE("Verify Test Configuration", "verification") {
 	REQUIRE(true == true);
@@ -143,4 +144,46 @@ TEST_CASE("Test across bottom")
 	game.mark_board(3);//X
 
 	REQUIRE(game.game_over()==true);
+}
+
+TEST_CASE("tic tac toe manager tests")
+{
+	tic_tac_toe game;
+	tic_tac_toe_manager game_m;
+
+	game.start_game("X");// game 1
+	game.mark_board(7); // X
+	game.mark_board(4); //O
+	game.mark_board(5); //X
+	game.mark_board(2); //O
+	game.mark_board(3);//X
+	game.game_over(); // x win 1
+	game_m.save_game(game);
+
+	game.start_game("X"); // game 2
+	game.mark_board(1); // X
+	game.mark_board(4); //O
+	game.mark_board(5); //X
+	game.mark_board(2); //O
+	game.mark_board(9);//X
+	game.game_over(); // x win 2
+	game_m.save_game(game);
+
+	game.start_game("X");
+	game.mark_board(1); // X
+	game.mark_board(6); //O
+	game.mark_board(2); //X
+	game.mark_board(5); //O
+	game.mark_board(3);//X
+	game.game_over(); // x win 3
+	game_m.save_game(game);
+	
+	int x= 0;
+	int o= 0;
+	int t= 0;
+	game_m.get_winner_total(o,x,t);
+
+	REQUIRE(x==3);
+	REQUIRE(o==0);
+	REQUIRE(t==0);
 }

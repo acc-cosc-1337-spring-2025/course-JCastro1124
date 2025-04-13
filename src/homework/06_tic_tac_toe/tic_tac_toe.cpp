@@ -6,16 +6,19 @@ bool tic_tac_toe::game_over() //update
 {
     if(check_column_win() == true)
     {
+        set_next_player();
         set_winner(get_player());
         return true;
     }
     else if(check_across_win() == true)
     {
+        set_next_player();
         set_winner(get_player());
         return true;
     }
     if(check_row_win() == true)
     {
+        set_next_player();
         set_winner(get_player());
         return true;
     }

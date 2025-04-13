@@ -35,5 +35,5 @@ private:
     void set_winner(string win_player) {winner = win_player;};
 };
 
-#endif tic_tac_toe_H
+#endif
 
