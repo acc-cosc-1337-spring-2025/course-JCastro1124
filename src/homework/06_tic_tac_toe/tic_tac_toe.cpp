@@ -4,6 +4,7 @@
 
 bool tic_tac_toe::game_over() //update
 {
+    string tie_match = "C";
     if(check_column_win() == true)
     {
         set_next_player();
@@ -16,7 +17,7 @@ bool tic_tac_toe::game_over() //update
         set_winner(get_player());
         return true;
     }
-    if(check_row_win() == true)
+    else if(check_row_win() == true)
     {
         set_next_player();
         set_winner(get_player());
@@ -24,8 +25,12 @@ bool tic_tac_toe::game_over() //update
     }
     else if(check_board_full() == true)
     {
-        set_winner("C");
+        set_winner(tie_match);
         return true;
+    }
+    else
+    {
+        return false;
     }
     return false;
 }
