@@ -2,9 +2,12 @@
 #include "tic_tac_toe_manager.h"
 #include <memory>
 #include <iostream>
+#include <utility>
 
+using std::unique_ptr; using std::make_unique; 
 using std::cin;
 using namespace::std;
+using std::move;
 
 int main() 
 {
@@ -12,10 +15,9 @@ int main()
 	tic_tac_toe_manager game_m;
 	string p1;
 	string choice = "y";
-	//bool run_game;
-	int o_w=0;
-	int x_w=0;
-	int tie=0;
+	bool run_game = false;
+	int X=0;int O=0;int tie = 0;
+	
 	do
 	{
 		cout<<"Enter first player(X or O): ";
@@ -29,10 +31,9 @@ int main()
 
 
 		game.start_game(p1);
-		
 
 		int position;
-		while(true)
+		while(!run_game)
 		{
 			game.display_board();
 			cout<<"Enter a position(1-9): ";
@@ -44,17 +45,19 @@ int main()
 				cin>>position;
 			}
 			game.mark_board(position);
-			game.game_over(); //segmentation fault (core dumped) Error
+			run_game = game.game_over();
 			
 		}
+		game.display_board();
 		game_m.save_game(game);
-		game_m.get_winner_total(o_w,x_w,tie);
+		game_m.get_winner_total(X,O,tie);
+		game_m.up_winner_count(game.get_winner());
 		cout<<"The winner is: "<<game.get_winner()<<"\n";
-		cout<<"x wins: "<<x_w<<" |o wins: "<<o_w<<" |ties: "<<tie<<"\n";
+		cout<<"X wins: "<<X<<"\n |O wins: "<<O<<"\n |ties: "<<tie<<"\n"; 
 
 		cout<<"Would you like to play again(Y/N): ";
 		cin>>choice;
-
+		run_game = false;
 
 	} while(choice == "Y" or choice == "y");
 

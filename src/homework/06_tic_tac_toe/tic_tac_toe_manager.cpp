@@ -16,7 +16,7 @@ void tic_tac_toe_manager::get_winner_total(int& o,int& x, int& t)
 }
 
 
-//private
+
 void tic_tac_toe_manager::up_winner_count(string winner)
 {
     if(winner == "X")

@@ -7,22 +7,25 @@ bool tic_tac_toe::game_over() //update
     string tie_match = "C";
     if(check_column_win() == true)
     {
-        //set_next_player();
+        
         set_winner(get_player());
         return true;
     }
+    
     else if(check_across_win() == true)
     {
-        //set_next_player();
+        
         set_winner(get_player());
         return true;
     }
+    
     else if(check_row_win() == true)
     {
-        //set_next_player();
+        
         set_winner(get_player());
         return true;
     }
+    
     else if(check_board_full() == true)
     {
         set_winner(tie_match);
@@ -32,6 +35,7 @@ bool tic_tac_toe::game_over() //update
     {
         return false;
     }
+
     return false;
 }
 
@@ -113,7 +117,7 @@ bool tic_tac_toe::check_column_win()
 bool tic_tac_toe::check_row_win()
 {
     string temp;
-    for(long unsigned int i = 0; i <= pegs.size(); i+=3)
+    for(long unsigned int i = 0; i <= pegs.size()-1; i+=3)
     {
         if(pegs[i] == "X" || pegs[i] == "O"){temp=pegs[i];}
         if (pegs[i+1] == temp)

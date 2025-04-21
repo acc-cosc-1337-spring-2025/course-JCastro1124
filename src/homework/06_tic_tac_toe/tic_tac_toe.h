@@ -15,7 +15,8 @@ using std::string;
 class tic_tac_toe
 {
 public:
-    bool game_over();
+    tic_tac_toe(){}    
+bool game_over();
     void start_game(string first_player); //out
     void mark_board(int position); //out
     string get_player() const{return player;};  //in
