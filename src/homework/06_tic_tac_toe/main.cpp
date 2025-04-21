@@ -53,7 +53,7 @@ int main()
 		game_m.get_winner_total(X,O,tie);
 		game_m.up_winner_count(game.get_winner());
 		cout<<"The winner is: "<<game.get_winner()<<"\n";
-		cout<<"X wins: "<<X<<"\n |O wins: "<<O<<"\n |ties: "<<tie<<"\n"; 
+		cout<<"X wins: "<<X<<"\nO wins: "<<O<<"\nties: "<<tie<<"\n"; 
 
 		cout<<"Would you like to play again(Y/N): ";
 		cin>>choice;
