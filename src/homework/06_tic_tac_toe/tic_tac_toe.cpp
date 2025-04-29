@@ -4,31 +4,31 @@
 
 bool tic_tac_toe::game_over() //update
 {
-    string tie_match = "C";
     if(check_column_win() == true)
     {
         
-        set_winner(get_player());
+        set_winner();
         return true;
     }
     
     else if(check_across_win() == true)
     {
         
-        set_winner(get_player());
+        set_winner();
         return true;
     }
     
     else if(check_row_win() == true)
     {
         
-        set_winner(get_player());
+        set_winner();
         return true;
     }
     
     else if(check_board_full() == true)
     {
-        set_winner(tie_match);
+        player = "C";
+        set_winner();
         return true;
     }
     else
@@ -48,7 +48,10 @@ void tic_tac_toe::start_game(string first_player)
 void tic_tac_toe::mark_board(int position)
 {
     pegs[position-1] = player;
-    set_next_player();
+    if (game_over() == false)
+    {
+        set_next_player();
+    }
 }
 
 void tic_tac_toe::display_board() const

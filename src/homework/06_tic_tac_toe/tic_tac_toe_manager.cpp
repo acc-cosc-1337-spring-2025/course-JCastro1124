@@ -21,14 +21,14 @@ void tic_tac_toe_manager::up_winner_count(string winner)
 {
     if(winner == "X")
     {
-        x_wins ++;
+        x_wins = x_wins+1;
     }
     else if(winner == "O")
     {
-        o_wins ++;
+        o_wins = o_wins+1;
     }
     else
     {
-        ties ++;
+        ties = ties +1;
     }
 }

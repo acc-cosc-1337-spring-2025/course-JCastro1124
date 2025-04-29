@@ -17,7 +17,6 @@ int main()
 	string choice = "y";
 	bool run_game = false;
 	int X=0;int O=0;int tie = 0;
-	
 	do
 	{
 		cout<<"Enter first player(X or O): ";
@@ -28,13 +27,14 @@ int main()
 			cout<<"Again! Enter first player(X or O): ";
 			cin>>p1;
 		}
-
-
+		game_m.get_winner_total(O,X,tie);
+		cout<<"X wins: "<<X<<"\nO wins: "<<O<<"\nties: "<<tie<<"\n"; 
 		game.start_game(p1);
 
 		int position;
 		while(!run_game)
 		{
+			
 			game.display_board();
 			cout<<"Enter a position(1-9): ";
 			cin>>position;
@@ -50,7 +50,6 @@ int main()
 		}
 		game.display_board();
 		game_m.save_game(game);
-		game_m.get_winner_total(X,O,tie);
 		game_m.up_winner_count(game.get_winner());
 		cout<<"The winner is: "<<game.get_winner()<<"\n";
 		cout<<"X wins: "<<X<<"\nO wins: "<<O<<"\nties: "<<tie<<"\n"; 
