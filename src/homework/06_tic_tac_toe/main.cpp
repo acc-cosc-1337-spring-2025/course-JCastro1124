@@ -50,7 +50,7 @@ int main()
 		}
 		game.display_board();
 		game_m.save_game(game);
-		game_m.up_winner_count(game.get_winner());
+		game_m.get_winner_total(O,X,tie);
 		cout<<"The winner is: "<<game.get_winner()<<"\n";
 		cout<<"X wins: "<<X<<"\nO wins: "<<O<<"\nties: "<<tie<<"\n"; 
 
