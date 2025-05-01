@@ -11,6 +11,69 @@ false
 */
 
 
+bool tic_tac_toe_3::check_across_win()
+{
+    string temp;
+    if(pegs[0] == "X" || pegs[0] == "O"){temp=pegs[0];}
+
+    if(pegs[4]==temp)
+    {
+        if(pegs[8]==temp)
+        {
+            return true;
+        }
+    }
+    if(pegs[2] == "X" || pegs[2] == "O"){temp=pegs[2];}
+    if (pegs[4]==temp)
+    {
+        if(pegs[6]==temp)
+        {
+            return true;
+        }
+    }
+    return false;
+}
+
+
+bool tic_tac_toe_3::check_row_win()
+{
+    string temp;
+    for(long unsigned int i = 0; i <= pegs.size()-1; i+=3)
+    {
+        if(pegs[i] == "X" || pegs[i] == "O"){temp=pegs[i];}
+        if (pegs[i+1] == temp)
+        {
+            if (pegs[i+2] == temp)
+            {
+                return true;
+            }
+            
+        }
+        
+    }
+    return false;
+}
+
+
+bool tic_tac_toe_3::check_column_win()
+{
+    string temp;
+    for(int i = 0; i <= 2; i++)
+    {
+        if(pegs[i] == "X" || pegs[i] == "O"){temp=pegs[i];}
+        if (pegs[i+3] == temp)
+        {
+            if (pegs[i+6] == temp)
+            {
+                return true;
+            }
+            
+        }
+        
+    }
+    return false;
+}
+
 
 /*
 class function check_row_win
