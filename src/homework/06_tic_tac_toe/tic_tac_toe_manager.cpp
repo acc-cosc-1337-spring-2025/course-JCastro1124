@@ -2,7 +2,7 @@
 #include "tic_tac_toe_manager.h"
 
 //public
-void tic_tac_toe_manager::save_game(std::unique_ptr<tic_tac_toe>& board)
+void tic_tac_toe_manager::save_game(unique_ptr<tic_tac_toe>& board)
 {
     
     up_winner_count(board->get_winner());
@@ -34,11 +34,3 @@ void tic_tac_toe_manager::up_winner_count(string winner)
     }
 }
 
-
-void tic_tac_toe_manager::display_all_games(tic_tac_toe_manager& manger)
-{
-    for(auto& game: manger.games)
-    {
-        out<<*game<<"\n";
-    }
-}
