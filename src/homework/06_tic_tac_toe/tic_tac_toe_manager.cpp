@@ -2,10 +2,11 @@
 #include "tic_tac_toe_manager.h"
 
 //public
-void tic_tac_toe_manager::save_game(tic_tac_toe board)
+void tic_tac_toe_manager::save_game(std::unique_ptr<tic_tac_toe>& board)
 {
-    games.push_back(board);
-    up_winner_count(board.get_winner());
+    
+    up_winner_count(board->get_winner());
+    games.push_back(std::move(board));
 }
 
 void tic_tac_toe_manager::get_winner_total(int& o,int& x, int& t)
@@ -30,5 +31,14 @@ void tic_tac_toe_manager::up_winner_count(string winner)
     else
     {
         ties = ties +1;
+    }
+}
+
+
+void tic_tac_toe_manager::display_all_games(tic_tac_toe_manager& manger)
+{
+    for(auto& game: manger.games)
+    {
+        out<<*game<<"\n";
     }
 }

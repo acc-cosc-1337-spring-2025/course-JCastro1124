@@ -15,7 +15,6 @@ using std::string;
 class tic_tac_toe
 {
 public:
-    tic_tac_toe(){}
     tic_tac_toe(int size) : pegs(size*size," "){}
     bool game_over();
     void start_game(string first_player); //out
